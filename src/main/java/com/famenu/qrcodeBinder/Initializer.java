@@ -23,8 +23,9 @@ public class Initializer {
 		
 		ServletContextHandler broad = new ServletContextHandler(ServletContextHandler.SESSIONS);
         	broad.setContextPath("/");
+//        	broad.addServlet(new ServletHolder(new IndexServlet()),"/index");
         	broad.addServlet(new ServletHolder(new SimplePing("/ping")),"/ping");
-        	broad.addServlet(new ServletHolder(new SimplePing("/*")),"/*");
+        	broad.addServlet(new ServletHolder(new TagToUrlRedirectServlet(database)),"/*");
         	
     	ServletContextHandler privateApi = new ServletContextHandler(ServletContextHandler.SESSIONS);
         	privateApi.setContextPath("/papi");

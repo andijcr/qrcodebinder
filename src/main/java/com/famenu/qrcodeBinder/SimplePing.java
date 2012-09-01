@@ -23,7 +23,9 @@ public class SimplePing extends HttpServlet {
         						"the relative path is "+
         						req.getRequestURI() +
         						"\n" +
-        						"my scope is " + this.scope);
+        						"my scope is " + this.scope +
+        						"\n" +
+        						System.getProperty("user.dir"));
     }
 
 }
